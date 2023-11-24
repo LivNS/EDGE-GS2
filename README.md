@@ -1,4 +1,4 @@
-# MedPlan - Simulador de Agenda Médica
+# MedPlan - Agenda Médica Fácil
 
 ## Descrição do Problema:
 
@@ -7,6 +7,7 @@ No campo médico, a gestão precisa das prescrições de medicamentos, especialm
 ## Proposta de Solução:
 
 O MedPlan é um programa de simulação de agenda médica desenvolvido para enfrentar esse desafio. Ele permite aos médicos registrar prescrições de medicamentos para os pacientes, juntamente com datas de início e término da administração dos remédios. Isso simplifica o controle das prescrições e viabiliza uma gestão mais eficiente das terapias medicamentosas.
+Para isso, desenvolvemos um Relógio utilizando o ESP32 que, futuramente, planejamos melhorar e, com isso, transformar em algo mais acessivel como uma notificação/alarme push em dispositivos smart watchs e phones.
 
 ## Detalhes do Código:
 O código utiliza as bibliotecas WiFi.h e LiquidCrystal_I2C.h para a conexão Wi-Fi e controle do display LCD I2C.
