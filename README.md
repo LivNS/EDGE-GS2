@@ -8,10 +8,6 @@ No campo médico, a gestão precisa das prescrições de medicamentos, especialm
 
 O MedPlan é um programa de simulação de agenda médica desenvolvido para enfrentar esse desafio. Ele permite aos médicos registrar prescrições de medicamentos para os pacientes, juntamente com datas de início e término da administração dos remédios. Isso simplifica o controle das prescrições e viabiliza uma gestão mais eficiente das terapias medicamentosas.
 
-##Diferencial da Solução:
-
-O MedPlan se destaca por sua interface simples e intuitiva, facilitando aos médicos a inserção dos dados das prescrições. Além disso, oferece uma visualização organizada da agenda de cada paciente, exibindo as prescrições de medicamentos associadas a datas específicas de administração. Sua flexibilidade e escalabilidade permitem a adaptação para atender às necessidades de diferentes especialidades médicas.
-
 ## Detalhes do Código:
 O código utiliza as bibliotecas WiFi.h e LiquidCrystal_I2C.h para a conexão Wi-Fi e controle do display LCD I2C.
 
