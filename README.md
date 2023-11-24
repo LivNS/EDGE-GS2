@@ -34,5 +34,7 @@ comprometer o sucesso do tratamento.
 <li>Após a conexão bem-sucedida, a mensagem será enviada automaticamente para o número especificado no código, com o texto "Hora de se medicar!!!!".</li>
 <li>O código pode ser ajustado no método sendMessage para personalizar o texto da mensagem ou ser integrado a um sistema mais complexo para gerenciar horários específicos de medicamentos.</li>
 
+# Referencia 
 
+https://www.callmebot.com/blog/free-api-whatsapp-messages/
 
