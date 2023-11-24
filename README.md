@@ -4,6 +4,14 @@
 
 O projeto MedPlan visa auxiliar na administração de medicamentos por meio do envio automatizado de lembretes via WhatsApp. Este código em particular faz uso da API do CallMeBot para enviar mensagens para um número específico, lembrando sobre a hora de tomar medicamentos.
 
+# Descrição do Problema
+
+No contexto médico, um desafio crítico é a gestão precisa das prescrições de
+medicamentos, especialmente quando lidamos com pacientes idosos. O esquecimento
+e a confusão na administração de medicamentos são questões recorrentes, levando a
+erros nas datas e medicações adequadas. Isso gera riscos à saúde do paciente e pode
+comprometer o sucesso do tratamento.
+
 # Pré-requisitos
 <li>Placa ESP32 ou similar compatível com a biblioteca WiFi.h e HTTPClient.h</li>
 <li>Acesso a uma rede Wi-Fi</li>
@@ -26,11 +34,5 @@ O projeto MedPlan visa auxiliar na administração de medicamentos por meio do e
 <li>Após a conexão bem-sucedida, a mensagem será enviada automaticamente para o número especificado no código, com o texto "Hora de se medicar!!!!".</li>
 <li>O código pode ser ajustado no método sendMessage para personalizar o texto da mensagem ou ser integrado a um sistema mais complexo para gerenciar horários específicos de medicamentos.</li>
 
-# Descrição do Problema:
-No contexto médico, um desafio crítico é a gestão precisa das prescrições de
-medicamentos, especialmente quando lidamos com pacientes idosos. O esquecimento
-e a confusão na administração de medicamentos são questões recorrentes, levando a
-erros nas datas e medicações adequadas. Isso gera riscos à saúde do paciente e pode
-comprometer o sucesso do tratamento.
 
 
