@@ -25,3 +25,12 @@ O projeto MedPlan visa auxiliar na administração de medicamentos por meio do e
 <li>Aguarde até que o dispositivo se conecte à rede Wi-Fi.</li>
 <li>Após a conexão bem-sucedida, a mensagem será enviada automaticamente para o número especificado no código, com o texto "Hora de se medicar!!!!".</li>
 <li>O código pode ser ajustado no método sendMessage para personalizar o texto da mensagem ou ser integrado a um sistema mais complexo para gerenciar horários específicos de medicamentos.</li>
+
+# Descrição do Problema:
+No contexto médico, um desafio crítico é a gestão precisa das prescrições de
+medicamentos, especialmente quando lidamos com pacientes idosos. O esquecimento
+e a confusão na administração de medicamentos são questões recorrentes, levando a
+erros nas datas e medicações adequadas. Isso gera riscos à saúde do paciente e pode
+comprometer o sucesso do tratamento.
+
+
