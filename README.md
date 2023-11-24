@@ -37,4 +37,4 @@ comprometer o sucesso do tratamento.
 ## Referência 
 
 https://www.callmebot.com/blog/free-api-whatsapp-messages/
-
+https://randomnerdtutorials.com/esp32-send-messages-whatsapp/ (tirar esse link
