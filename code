@@ -1,58 +1,69 @@
 #include <WiFi.h>
-#include <HTTPClient.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 
-const char* ssid = "NOME_DA_REDE_WIFI";
-const char* password = "SENHA_DA_REDE_WIFI";
+LiquidCrystal_I2C LCD = LiquidCrystal_I2C(0x27, 16, 2);
 
-String phoneNumber = "+5516997231155"; // Removi o "=" no início do número
-String apiKey = "SUA_CHAVE_API";
+#define NTP_SERVER     "pool.ntp.org"
+#define UTC_OFFSET     0
+#define UTC_OFFSET_DST 0
 
-void sendMessage(String message) {
-  String encodedMessage = URLEncoder.encode(message); // Codifica a mensagem
+void spinner() {
+  static int8_t counter = 0;
+  const char* glyphs = "\xa1\xa5\xdb";
+  LCD.setCursor(15, 1);
+  LCD.print(glyphs[counter++]);
+  if (counter == strlen(glyphs)) {
+    counter = 0;
+  }
+}
 
-  // Constrói o URL com a mensagem codificada
-  String url = "https://api.callmebot.com/whatsapp.php?phone=" + phoneNumber + "&apikey=" + apiKey + "&text=" + encodedMessage;
-
-  HTTPClient http;
-  http.begin(url);
-
-  // Define o cabeçalho Content-Type
-  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-
-  // Envia a requisição HTTP POST
-  int httpResponseCode = http.POST(""); // Não é necessário enviar dados no POST
-
-  if (httpResponseCode == 200) {
-    Serial.println("Mensagem enviada com sucesso");
-  } else {
-    Serial.println("Erro ao enviar a mensagem");
-    Serial.print("Código de resposta HTTP: ");
-    Serial.println(httpResponseCode);
+void printLocalTime() {
+  struct tm timeinfo;
+  if (!getLocalTime(&timeinfo)) {
+    LCD.setCursor(0, 1);
+    LCD.println("Connection Err");
+    return;
   }
 
-  // Libera os recursos
-  http.end();
+  LCD.setCursor(8, 0);
+  LCD.println(&timeinfo, "%H:%M:%S");
+
+  LCD.setCursor(0, 1);
+  LCD.println(&timeinfo, "%d/%m/%Y   %Z");
 }
 
 void setup() {
   Serial.begin(115200);
 
-  WiFi.begin(ssid, password);
-  Serial.println("Conectando");
+  LCD.init();
+  LCD.backlight();
+  LCD.setCursor(0, 0);
+  LCD.print("Connecting to ");
+  LCD.setCursor(0, 1);
+  LCD.print("WiFi ");
 
+  WiFi.begin("Wokwi-GUEST", "", 6);
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+    delay(250);
+    spinner();
   }
 
   Serial.println("");
-  Serial.print("Conectado à rede WiFi com o endereço IP: ");
+  Serial.println("WiFi connected");
+  Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
-  // Envia a mensagem para o WhatsApp
-  sendMessage("Hora de se medicar!!!!");
+  LCD.clear();
+  LCD.setCursor(0, 0);
+  LCD.println("Online");
+  LCD.setCursor(0, 1);
+  LCD.println("Updating time...");
+
+  configTime(UTC_OFFSET, UTC_OFFSET_DST, NTP_SERVER);
 }
 
 void loop() {
-  // Seu código aqui
+  printLocalTime();
+  delay(250);
 }
