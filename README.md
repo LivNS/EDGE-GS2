@@ -33,4 +33,10 @@ O código pode ser configurado para se conectar a uma rede Wi-Fi específica, fo
 ![Captura de tela 2023-11-24 203109](https://github.com/LivNS/EDGE-GS2/assets/118857876/b79497de-ade7-4486-8760-8c00ca748c2d)
 
 ## Acesso ao Wokwi:
+
 https://wokwi.com/projects/382321204553326593
+
+## Autoras:
+
+Débora da Silva Amaral RM 550412 
+Lívia Namba Seraphim RM 97819
